@@ -10,6 +10,30 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-inner">
+        <div class="header-left-nav">
+          <a href="/">StayShare</a>
+        </div>
+        <div class="header-right-nav">
+          <% if user_signed_in? %>
+            <div><%= link_to "名前" %></div>
+            <ul class="header-nav-menu">
+              <li><%= link_to "ルーム登録", new_room_path %></li>
+              <li><%= link_to "予約済みルーム一覧", "#" %></li>
+              <li><%= link_to "登録済みルーム一覧", room_path(current_user.id) %></li>
+              <li><%= link_to "設定", account_path %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <ul>
+              <li><%= link_to "ログイン", new_user_session_path %></li>
+              <li><%= link_to "新規登録", new_user_registration_path %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
