@@ -8,4 +8,5 @@ class User < ApplicationRecord
   
   # アソシエーション
   has_many :rooms
+  has_many :reservations
 end

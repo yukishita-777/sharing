@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'devise'
   gem 'carrierwave'
+  gem 'mini_magick'
 end
 
 group :development do

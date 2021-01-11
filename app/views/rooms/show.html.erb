@@ -1,5 +1,19 @@
-<% @rooms.each do |room| %>
-
-  <%= room.name %>
-
-<% end %>
+<div class="container room-show">
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag("#{@room.image}") %>
+      <div class="room-show-detail">
+        <div class="room-show-detail-icon">
+          <%= link_to "/" do %>
+            <%= image_tag("#{@room.user.image}") %>
+          <% end %>
+        </div>
+        <div class="room-show-profile">
+          <p class="room-show-profile-name"><%=@room.name %></p>
+          <p class="room-show-profile-address"><%=@room.address %></p>
+        </div>
+      </div>
+      <p class="room-show-detail-introduction"><%=@room.introduction %></p>
+    </div>
+  </div>
+</div>

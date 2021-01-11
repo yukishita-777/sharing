@@ -1,0 +1,22 @@
+<div class="container">
+  <h5><%= "検索結果#{@rooms.count}件" %></h5>
+  <div class="row">
+    <div class="flame-outer">
+      <div class="flame-inner">
+        <% @rooms.each do |room| %>
+          <%= link_to room_path(room) do %>
+            <div class="room-image-outer">
+              <%= image_tag("#{room.image}") %>
+            </div>
+            <div class="room-profile">
+              <p class="room-profile-name"><%= room.name %></p>
+              <p class="room-profile-address"><%= room.address %></p>
+              <p class="room-profile-fee"><%= room.fee %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+</div>

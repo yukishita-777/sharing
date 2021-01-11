@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>ルーム画像</th>
+      <th>ルーム名</th>
+      <th>ルーム紹介</th>
+      <th>料金</th>
+      <th>住所</th>
+      <th>作成日</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= image_tag("#{room.image}") %></td>
+        <td><%= room.name %></td>
+        <td><%= room.introduction %></td>
+        <td><%= room.fee %></td>
+        <td><%= room.address %></td>
+        <td><%= room.created_at %></td>
+        <td>
+          <%= link_to "編集", edit_room_path(room) %>
+        </td>
+        <td>
+          <%= link_to "削除", room_path(room), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
