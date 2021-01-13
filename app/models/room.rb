@@ -1,8 +1,7 @@
 class Room < ApplicationRecord
   # アソシエーション
   belongs_to :user
-  has_many :room_reservations
-  has_many :reservations, through: :room_reservations
+  has_many :reservations, dependent: :destroy
   
   def self.search1(search) #両方が入力された場合
     if search

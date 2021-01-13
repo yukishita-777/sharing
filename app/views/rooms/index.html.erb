@@ -1,4 +1,6 @@
-<%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
-  <%= f.text_field :area, placeholder: "エリア" %>
-  <%= f.submit "検索" %>
-<% end %>
+<div class="form-area">
+  <%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
+    <%= f.text_field :area, placeholder: "エリア" %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>

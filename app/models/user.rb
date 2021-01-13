@@ -7,6 +7,6 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   
   # アソシエーション
-  has_many :rooms
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
+  has_many :rooms, dependent: :destroy
 end

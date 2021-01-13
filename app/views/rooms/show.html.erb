@@ -15,5 +15,22 @@
       </div>
       <p class="room-show-detail-introduction"><%=@room.introduction %></p>
     </div>
+    <div class="col-md-4">
+      <div class="room-show-nav">
+        <h5 class="price-icon"><%= @room.fee %>/日</h5>
+        <div class="room-show-date-select">
+          <%= form_with url: new_room_reservation_path(@room.id), method: :get, local: true do |f| %>
+            <%= f.label :start_day, "開始日" %>
+            <%= f.date_field :start_day %>
+            <%= f.label :finish_day, "終了日" %>
+            <%= f.date_field :finish_day %>
+            <%= f.label :number, "人数" %>
+            <%= f.number_field :number %>
+            <%= f.hidden_field :room_id, :value => @room.id %>
+            <%= f.submit "予約する" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

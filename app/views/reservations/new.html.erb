@@ -1,0 +1,22 @@
+  <div class="row">
+    <div class="col-md-4">
+      <div class="room-show-nav">
+        <h4>予約内容確認</h4>
+        <h5 class="price-icon"><%= @room.fee %>/日</h5>
+        <div class="room-show-date-select">
+          <%= form_with model: [@room, @reservation] do |f| %>
+            <%= f.label :start_day, "開始日" %>
+            <%= f.date_field :start_day, value: @reservation.start_day, readonly: true %>
+            <%= f.label :finish_day, "終了日" %>
+            <%= f.date_field :finish_day, value: @reservation_finish_day, readonly: true  %>
+            <%= f.label :number, "人数" %>
+            <%= f.number_field :number, value: @reservation_number, readonly: true %>
+            <%= f.label :reservation_amount_total, "合計金額" %>
+            <%= f.number_field :reservation_amount_total, value:  @room.fee.to_i * @reservation_number.to_i, readonly: true %>
+            <%= f.submit "予約を確定" %>
+          <% end %>
+          <%= link_to "ルーム詳細に戻る", room_path(@room.id) %>
+        </div>
+      </div>
+    </div>
+  </div>  
