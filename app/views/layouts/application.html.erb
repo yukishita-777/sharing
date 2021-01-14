@@ -4,22 +4,19 @@
     <title>Sharing</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
-    <%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
-      <%= f.text_field :area, placeholder: "エリア" %>
-      <%= f.text_field :keyword, placeholder: "キーワード" %>
-      <%= f.submit "検索" %>
-    <% end %>
     <header>
-      <div class="header-inner">
+      <div>
+        
         <div class="header-left-nav">
           <a href="/">StayShare</a>
         </div>
+        <%= render "shared/search_form" %>
         <div class="header-right-nav">
           <% if user_signed_in? %>
             <div><%= link_to "名前" %></div>
