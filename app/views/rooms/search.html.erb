@@ -1,20 +1,23 @@
 <div class="container">
   <h5><%= "検索結果#{@rooms.count}件" %></h5>
-  <div class="row">
-    <div class="flame-outer">
-      <div class="flame-inner">
-        <% @rooms.each do |room| %>
-          <%= link_to room_path(room) do %>
-            <div class="room-image-outer">
-              <%= image_tag("#{room.image}") %>
-            </div>
-            <div class="room-profile">
-              <p class="room-profile-name"><%= room.name %></p>
-              <p class="room-profile-address"><%= room.address %></p>
-              <p class="room-profile-fee"><%= room.fee %></p>
-            </div>
-          <% end %>
-        <% end %>
+  
+  <div class="album py-5 bg-light">
+    <div class="cotainer">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <% @rooms.each do |room| %>
+              <%= link_to room_path(room) do %>
+                <%= image_tag("#{room.image}") %>
+                <div class="card-body">
+                  <h4 class="card-text"><span>ルーム名：</span><%= room.name %></h4>
+                  <h6 class="card-text"><span>住所：</span><%= room.address %></h6>
+                  <h6 class="card-text"><span>料金：¥</span>：</span><%= room.fee %></h6>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
