@@ -1,0 +1,66 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+header {
+  margin: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 685px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-img-overlay{
+  top: calc(50% - 0.5rem);
+  rigth: 100px;
+  left: 100px;
+  font-weight: bold;
+  background-color: white;
+  margin-right: 800px;
+  margin-bottom: 200px;
+  border-radius: 30px;
+}
+
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container-fluid {
+  margin-top: 50px;
+}
+
+.user-view-box {
+  margin: 30px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+a {
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+.card-body img {
+  width: 100px;
+  height: 100px;
+}
+
+.col-md-9.bg-light img {
+  width: 100px;
+  height: 100px;
+}
