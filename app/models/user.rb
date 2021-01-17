@@ -9,4 +9,9 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :reservations, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  
+  # バリデーション
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :introduction, length: { in: 0..100 }
 end

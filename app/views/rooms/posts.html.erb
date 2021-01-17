@@ -21,7 +21,7 @@
             <td class="align-middle"><%= room.introduction %></td>
             <td class="align-middle"><%= room.fee %></td>
             <td class="align-middle"><%= room.address %></td>
-            <td class="align-middle"><%= room.created_at %></td>
+            <td class="align-middle"><%= room.created_at.to_s(:datetime_jp) %></td>
             <td class="align-middle">
               <%= link_to "編集", edit_room_path(room) %>
             </td>

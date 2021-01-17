@@ -3,6 +3,11 @@ class Room < ApplicationRecord
   belongs_to :user
   has_many :reservations, dependent: :destroy
   
+  # バリデーション
+  validates :name, presence: true
+  validates :fee, presence: true
+  validates :introduction, length: { in: 0..50 }
+  
   def self.search1(search) #両方が入力された場合
     if search
       Room.where('name LIKE(?) or address LIKE(?) or introduction LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
