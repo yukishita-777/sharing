@@ -1,45 +1,44 @@
     <div class="container">
-        <%= form_for @room do |f| %>
-            <div class="form-group row">
-                <%= f.label :name, "ルーム名", class: "col-sm-2 col-form-label", for: "exampleName" %>
-                <div class="col-sm-10">
-                    <%= f.text_field :name, class: "form-control", id: "exampleName", placeholder: "ルーム名を入力" %>
+            <%= form_for @room do |f| %>
+                <div class="form-group row">
+                    <%= f.label :name, "ルーム名", class: "col-sm-2 col-form-label", for: "exampleName" %>
+                    <div class="col-sm-10">
+                        <%= f.text_field :name, class: "form-control", id: "exampleName", placeholder: "ルーム名を入力" %>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="form-group row">
+                    <%= f.label :introduction, "ルーム紹介", class: "col-sm-2 col-form-label", for: "exampleIntroduction" %>
+                    <div class="col-sm-10">
+                        <%= f.text_area :introduction, rows: 5, class: "form-control", id: "exampleIntroduction",placeholder: "ルームの説明を入力" %>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <%= f.label :fee, "料金", class: "col-sm-2 col-form-label", for: "exampleFee" %>
+                    <div class="col-sm-10">
+                        <%= f.number_field :fee, class: "form-control", id: "exampleFee", placeholder: "1日あたりの料金を入力" %>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <%= f.label :address, "住所", class: "col-sm-2 col-form-label", for: "exampleAddress" %>
+                    <div class="col-sm-10">
+                        <%= f.text_field :address, class: "form-control", id: "exampleAddress", placeholder: "住所を入力" %>
+                    </div>
+                </div>
             
-            <div class="form-group row">
-                <%= f.label :introduction, "ルーム紹介", class: "col-sm-2 col-form-label", for: "exampleIntroduction" %>
-                <div class="col-sm-10">
-                    <%= f.text_area :introduction, rows: 5, class: "form-control", id: "exampleIntroduction",placeholder: "ルームの説明を入力" %>
+                <div class="form-group row">
+                    <%= f.label :image, "ルーム画像", class: "col-sm-2 col-form-label", for: "exampleImage" %>
+                    <div class="col-sm-10">
+                        <%= f.file_field :image, class: "form-control-file", id: "exampleImage" %>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="form-group row">
-                <%= f.label :fee, "料金", class: "col-sm-2 col-form-label", for: "exampleFee" %>
-                <div class="col-sm-10">
-                    <%= f.number_field :fee, class: "form-control", id: "exampleFee", placeholder: "1日あたりの料金を入力" %>
+                
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <%= f.submit "登録", class: "btn btn-primary w-25" %>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="form-group row">
-                <%= f.label :address, "住所", class: "col-sm-2 col-form-label", for: "exampleAddress" %>
-                <div class="col-sm-10">
-                    <%= f.text_field :address, class: "form-control", id: "exampleAddress", placeholder: "住所を入力" %>
-                </div>
-            </div>
-        
-            <div class="form-group row">
-                <%= f.label :image, "ルーム画像", class: "col-sm-2 col-form-label", for: "exampleImage" %>
-                <div class="col-sm-10">
-                    <%= f.file_field :image, class: "form-control-file", id: "exampleImage" %>
-                </div>
-            </div>
-            
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <%= f.submit "登録", class: "btn btn-primary w-25" %>
-                </div>
-            </div>
-        <% end %>
+            <% end %>
     </div>
-
